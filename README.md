@@ -30,7 +30,7 @@ _inappropriate_behaviour_v2_/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-org>/behavior-monitor.git
+git clone https://github.com/Aqhari/behavior-monitor.git
 cd behavior-monitor
 ```
 
