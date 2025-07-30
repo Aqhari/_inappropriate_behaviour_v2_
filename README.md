@@ -7,7 +7,7 @@ A real-time face recognition and behavior monitoring solution built with YOLO, F
 ## 📂 Project Structure
 
 ```
-your-project/
+_inappropriate_behaviour_v2_/
 ├── .github/
 │   └── workflows/
 │       └── ci.yml             # GitHub Actions pipeline (Python 3.12)
