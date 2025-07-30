@@ -7,7 +7,7 @@ A real-time face recognition and behavior monitoring solution built with YOLO, F
 ## 📂 Project Structure
 
 ```
-inappropriate_behaviour_v2_/
+your-project/
 ├── .github/
 │   └── workflows/
 │       └── ci.yml             # GitHub Actions pipeline (Python 3.12)
@@ -95,9 +95,23 @@ GitHub Actions is configured in `.github/workflows/ci.yml` to:
 
 ---
 
+## 📝 .gitignore
 
+```gitignore
+# Python
+venv/
+__pycache__/
+
+# Generated artifacts
+scripts/face_encodings.pkl
+scripts/pkltimestamp
+
+# Model files (if you want to download separately)
+model_checkpoints/
+```
 
 ---
 
+## 🎓 License
 
-"# _inappropriate_behaviour_v2_" 
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
