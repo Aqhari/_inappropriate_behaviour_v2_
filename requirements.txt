@@ -8,7 +8,7 @@ keras-facenet
 mediapipe
 ultralytics
 deep_sort_realtime
-mysql-connector-python
+mysql-connector-python==9.4.0
 csv
 argparse
 queue
