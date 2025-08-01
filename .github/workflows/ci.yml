@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.11]
+        python-version: [3.12]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -40,24 +40,26 @@ jobs:
             --face_data scripts/face_data \
             --train_script scripts/train_face1.py || echo "auto_trainer ran"
 
-  docker-build:
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+  # Docker build removed as repository does not include Dockerfile
+  # If you add a Dockerfile later, you can re-enable this job
+  # docker-build:
+  #   if: github.ref == 'refs/heads/main'
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v3
 
-      - name: Build Docker image
-        run: |
-          docker build -t myorg/behavior-monitor:latest .
+  #     - name: Build Docker image
+  #       run: |
+  #         docker build -t myorg/behavior-monitor:latest .
 
-      - name: Log in to GitHub Container Registry
-        uses: docker/login-action@v2
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+  #     - name: Log in to GitHub Container Registry
+  #       uses: docker/login-action@v2
+  #       with:
+  #         registry: ghcr.io
+  #         username: ${{ github.actor }}
+  #         password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Push Docker image
-        run: |
-          docker push ghcr.io/${{ github.repository }}/behavior-monitor:latest
+  #     - name: Push Docker image
+  #       run: |
+  #         docker push ghcr.io/${{ github.repository }}/behavior-monitor:latest
