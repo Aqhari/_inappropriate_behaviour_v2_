@@ -9,7 +9,7 @@ mediapipe
 ultralytics
 deep_sort_realtime
 mysql-connector-python==9.4.0
-csv
+#csv
 argparse
 queue
 time
